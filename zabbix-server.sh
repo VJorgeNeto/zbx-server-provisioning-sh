@@ -1,4 +1,27 @@
+```bash
 #!/bin/bash
+#
+# Script: zabbix-server.sh
+# Autor: VJorgeNeto (@VJorgeNeto)
+# Descrição: Provisiona o Zabbix Server 7.0 LTS com Apache2 e MySQL no Ubuntu Server 24.04.
+# Versão: 1.0.0
+#
+# Uso:
+#   sudo ./zabbix-server.sh
+#
+# Requisitos:
+#   - Ubuntu Server 24.04
+#   - Conexão com a internet
+#   - Permissões de root (sudo)
+#
+# Funcionalidades:
+#   - Instala Apache2, MySQL e Zabbix
+#   - Configura banco de dados do Zabbix
+#   - Habilita e inicia os serviços necessários
+#
+# Licença:
+#   MIT License
+#
 
 set -e
 
