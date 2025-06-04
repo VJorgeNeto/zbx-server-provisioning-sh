@@ -1,4 +1,3 @@
-```bash
 #!/bin/bash
 #
 # Script: zabbix-server.sh
