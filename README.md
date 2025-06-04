@@ -1,0 +1,1 @@
+# zbx-server-provisioning-sh
