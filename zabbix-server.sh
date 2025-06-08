@@ -56,7 +56,7 @@ echo "[4/8] Instalando Zabbix Server e pacotes necessários..."
 wget https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_7.0-2%2Bubuntu24.04_all.deb
 dpkg -i zabbix-release_7.0-2+ubuntu24.04_all.deb
 apt update
-apt install -y zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-sql-scripts zabbix-agent
+apt install -y zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-sql-scripts zabbix-agent2
 
 echo "[5/8] Importando schema para o banco de dados Zabbix..."
 zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql -uzabbix -p${ZABBIX_DB_PASSWORD} zabbix
@@ -69,8 +69,8 @@ mysql -uroot -p${MYSQL_ROOT_PASSWORD} -e "SET GLOBAL log_bin_trust_function_crea
 
 # 6. Serviços
 echo "[7/8] Habilitando e iniciando serviços..."
-systemctl enable zabbix-server apache2 php8.3-fpm zabbix-agent --now
-systemctl restart apache2 php8.3-fpm
+systemctl enable zabbix-server apache2 zabbix-agent2 --now
+systemctl restart apache2
 
 # 7. Locales
 echo "[8/8] Corrigindo locales para pt_BR.UTF-8 e en_US.UTF-8..."
